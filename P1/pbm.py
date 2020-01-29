@@ -74,32 +74,6 @@ def write_ppm(img, file):
                 else:
                     ppmfile.write(str(img.image[line, columm]))
 
-def media(path, file, m, n):
-
-    img = read_ppm(path)
-
-    imgout = Image(img.x, img.y, img.header, img.comment, img.pixel)
-
-    i, j = img.image.shape
-
-    masc = Masc(m, n)
-    
-    masc.masc *= (1/(m * n))
-
-    for x in tqdm.trange(masc.a, i - 1 - masc.a, desc='Removendo ruido'):
-        for y in range(masc.b, j - 1 - masc.b):
-            pixel = 0
-            for s in range(m):
-                for t in range(n):
-                    pixel += masc.masc[s][t] * img.image[x + s - masc.a][y + t - masc.b]
-            imgout.image[x][y] = pixel
-
-    imgout.image = imgout.image.astype(int)
-
-    write_ppm(imgout, file)
-
-    return imgout
-
 def mediana(path, file, m, n):
 
     img = read_ppm(path)
@@ -123,27 +97,9 @@ def mediana(path, file, m, n):
 
     return imgout
 
-def limiarizar(img, file, limiar):
-
-    lim = Image(img.x, img.y, img.header, img.comment, img.pixel)
-
-    #lim.image = img.pixel - img.image + limiar
-
-    for i in range(img.pixel):
-        for j in range(img.pixel):
-            if(img.image[i][j] > limiar):
-                lim.image[i][j] = img.pixel;
-            else:
-                lim.image[i][j] = 0;
-
-    lim.image = lim.image.astype(int)
-
-    write_ppm(lim, file)
-
 def main():
 
-    imgout = media("teste.pbm", "suave", 3, 3)
-    limiarizar(imgout, "limiar", 0.5)
+    imgout = mediana("teste.pbm", "suave", 2, 2)
 
 if __name__ == "__main__":
     main()
