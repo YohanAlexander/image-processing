@@ -88,8 +88,8 @@ def mediana(path, file, m, n):
         for y in range(masc.b, j - 1 - masc.b):
             for s in range(m):
                 for t in range(n):
-                    masc.masc[s][t] = img.image[x + s - masc.a][y + t - masc.b]
-            imgout.image[x][y] = np.median(masc.masc)
+                    masc.masc[s][t] = img.image[x + s - masc.a][y + t - masc.b]   
+            imgout.image[x][y] = np.sort(masc.masc)[0][0]
 
     imgout.image = imgout.image.astype(int)
 
