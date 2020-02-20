@@ -3,7 +3,7 @@
 <!-- ABOUT THE PROJECT -->
 # Projetos de Processamento de imagens
 
-Implementação em Python, utilizando a bilioteca Numpy, de filtros ou máscaras, e operações pontuais de processamento de imagens, para o uso em imagens no formato `.ppm`.
+Implementação em Python, utilizando a biblioteca Numpy, de filtros ou máscaras, e operações pontuais de processamento de imagens, para o uso em imagens no formato `.ppm` ou `.pbm`.
 
 <!-- GETTING STARTED -->
 ## Funcionamento
