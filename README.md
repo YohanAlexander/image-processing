@@ -1,7 +1,19 @@
 
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/yohanalexander/image-processing">
+    <img src="dip.jpg" alt="Logo" width="50%" height="50%">
+  </a>
+
+  <h1 align="center">Processamento de imagens</h1>
+
+  <p align="center">
+    Projetos de Processamento de imagens!
+    <br />
 
 <!-- ABOUT THE PROJECT -->
-# Projetos de Processamento de imagens
+## Sobre o Projeto
 
 Implementação em Python, utilizando a biblioteca Numpy, de filtros ou máscaras, e operações pontuais de processamento de imagens, para o uso em imagens no formato `.ppm` ou `.pbm`.
 
